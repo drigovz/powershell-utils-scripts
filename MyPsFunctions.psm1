@@ -14,8 +14,6 @@ function myps_clean {
     Write-Host "Recycle bin cleaned!!!"  -ForegroundColor "Green"
 }
 
-# ############################################################################################################################ #
-# ############################################################################################################################ #
 # delete logs and temp files
 function myps_clean_temps {
     # folders to delete temp files
@@ -38,10 +36,6 @@ function myps_clean_temps {
 
     Write-Host "Finished!" -ForegroundColor "Green"
 }
-
-# ############################################################################################################################ #
-# ############################################################################################################################ #
-# delete logs and temp files
 
 # export functions
 Export-ModuleMember -Function myps_clean
