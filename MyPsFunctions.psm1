@@ -7,15 +7,17 @@
 #>
 
 # clean recycle bin
-function MyPs_EmptyRecycleBin {
+function myps_clean {
     $Recycler = (New-Object -ComObject Shell.Application).NameSpace(0xa)
     $Recycler.items() | ForEach-Object { Remove-Item $_.path -force -recurse }
 
     Write-Host "Recycle bin cleaned!!!"  -ForegroundColor "Green"
 }
 
+# ############################################################################################################################ #
+# ############################################################################################################################ #
 # delete logs and temp files
-function MyPs_DeleteLogs {
+function myps_clean_temps {
     # folders to delete temp files
     $Paths = "C:\Users\drigo\AppData\Local\Temp\", "C:\Windows\Temp\"
 
@@ -37,6 +39,10 @@ function MyPs_DeleteLogs {
     Write-Host "Finished!" -ForegroundColor "Green"
 }
 
+# ############################################################################################################################ #
+# ############################################################################################################################ #
+# delete logs and temp files
+
 # export functions
-Export-ModuleMember -Function MyPs_EmptyRecycleBin
-Export-ModuleMember -Function MyPs_DeleteLogs
+Export-ModuleMember -Function myps_clean
+Export-ModuleMember -Function myps_clean_temps
