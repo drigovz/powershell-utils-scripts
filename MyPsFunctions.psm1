@@ -37,6 +37,69 @@ function myps_clean_temps {
     Write-Host "Finished!" -ForegroundColor "Green"
 }
 
+# setup git alias and other configurations
+# to run this funtion:
+# myps_setup_git -gitUserName "usuario" -gitUserEmail "email"
+function myps_setup_git {
+    param (
+        $gitUserName,
+        $gitUserEmail
+    )
+
+    $path = "C:\Program Files\Git"
+
+    If (Test-Path -Path $path) {
+        Write-Host "Git installed!! " -ForegroundColor "Green"
+
+        Init_Config_Git $gitUserName  $gitUserEmail
+    }
+    else {
+        Write-Host "Git not installed yet!"  -ForegroundColor "Red"
+
+        Write-Host "Installing latest version of Git with Chocolatey!" -ForegroundColor "Green"
+
+        # installing Git with Chocolatey
+        choco install git --params "/NoShellIntegration /NoGuiHereIntegration /NoShellHereIntegration"
+
+        Write-Host "Git installed!! " -ForegroundColor "Green"
+        Init_Config_Git $gitUserName  $gitUserEmail
+    }
+}
+
+function Init_Config_Git {
+    Write-Host "Init configuration of Git for $gitUserName ($gitUserEmail)!!" -ForegroundColor "Green"
+
+    # version installed
+    git --version
+
+    # set global configurations
+    git config --global user.name $gitUserName
+    git config --global user.email $gitUserEmail
+    git config --global core.editor notepad
+    git config --global init.defaultbranch main
+    git config --global core.autocrlf false
+
+    # set alias for Git
+    git config --global alias.g git
+    git config --global alias.cf config
+    git config --global alias.co checkout
+    git config --global alias.s status
+    git config --global alias.b branch
+    git config --global alias.c commit
+    git config --global alias.a add
+    git config --global alias.l log
+    git config --global alias.rl reflog
+    git config --global alias.d diff
+    git config --global alias.rs reset
+    git config --global alias.r remote
+    git config --global alias.ps push
+    git config --global alias.p pull
+    git config --global alias.m merge
+    git config --global alias.cp cherry-pick
+    git config --global alias.rb rebase
+}
+
 # export functions
 Export-ModuleMember -Function myps_clean
 Export-ModuleMember -Function myps_clean_temps
+Export-ModuleMember -Function myps_setup_git
