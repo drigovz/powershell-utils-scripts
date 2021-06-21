@@ -88,6 +88,10 @@ else {
     # choco install docker-desktop -y
 
 
+    # install Golang
+    choco install golang
+
+
     # install firefox
     choco install firefox --params "/l:pt-BR /NoDesktopShortcut /NoStartMenuShortcut" -y
 
