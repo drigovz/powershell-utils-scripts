@@ -103,3 +103,6 @@ function Init_Config_Git {
 Export-ModuleMember -Function myps_clean
 Export-ModuleMember -Function myps_clean_temps
 Export-ModuleMember -Function myps_setup_git
+
+# call functions on the Profile Powershell file - C:\Users\user_name\Documents\PowerShell
+# Import-Module MyPsFunctions

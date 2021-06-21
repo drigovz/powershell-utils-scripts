@@ -2,7 +2,17 @@
 
 A serie of commands for automate proccess and tasks of your Windows system using PowerShell Core.
 
-## Functions
-* **myps_clean** - Empty recycle bin of your system;
-* **myps_clean _temps** - Clean temporary data for paths (temp and %temp%) of your Windows system. 
-* **myps_setup _git**  - Init configurations of Git if you have Git installed, or, install and after init configurations if you don't have Git in your pc. 
+## Setup Development Environment for Windows Devs
+This script install and configure environment tho develop apps with ASP.NET Core and Node.js
+
+* chocolatey
+* node
+* npm
+* yarn
+* git
+* vim
+* dotnet
+* vs code
+* docker
+* firefox
+* windows terminal 
