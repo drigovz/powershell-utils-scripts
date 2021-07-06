@@ -23,8 +23,16 @@ function gb() {
 	git branch
 }
 
-function gcom() {
-	git commit -m 
+function gcom(
+     [Parameter()]
+     [string]$CommitMessage) {
+	git commit -m $CommitMessage
+}
+
+function gcl(
+     [Parameter()]
+     [string]$RepoUrl) {
+	git clone $RepoUrl
 }
 
 function gaa() { 
@@ -78,6 +86,7 @@ Export-ModuleMember -Function gco
 Export-ModuleMember -Function gs
 Export-ModuleMember -Function gb
 Export-ModuleMember -Function gcom
+Export-ModuleMember -Function gcl
 Export-ModuleMember -Function gaa
 Export-ModuleMember -Function glg
 Export-ModuleMember -Function grl
