@@ -1,18 +1,45 @@
-# PowerShell Core Utilities
+## PowerShell Core Utilities
 
 A serie of commands for automate proccess and tasks of your Windows system using PowerShell Core.
 
-## Setup Development Environment for Windows Devs
-This script install and configure environment tho develop apps with ASP.NET Core and Node.js
+#### ps-git-alias
+Collection of git command alias for cmdlet of OS.
+* g    -> git
+* gs   -> git status
+* gcf  -> git config 
+* gco  -> git checkout
+* gs   -> git status 
+* gb   -> git branch 
+* gcom -> git commit -m $commit-message 
+* gcl  -> git clone  repository-url
+* gaa  -> git add .
+* glg  -> git log
+* grl  -> git reflog
+* gd   -> git diff
+* grs  -> git reset 
+* gr   -> git remote
+* gpsh -> git push 
+* gpl  -> git pull 
+* gme  -> git merge 
+* gcp  -> git cherry-pick
+* grb  -> git rebase 
 
-* chocolatey
-* node
-* npm
-* yarn
-* git
-* vim
-* dotnet
-* vs code
-* docker
-* firefox
-* windows terminal 
+#### MyPsFunctions
+* myps_clean          -> clean recycle bin
+* myps_clean_temps    -> delete logs and temp files
+* myps_setup_git      -> setup git alias and other configurations
+  * softwares includeds
+    * chocolatey
+    * node
+    * npm
+    * yarn
+    * git
+    * vim
+    * dotnet
+    * vs code
+    * docker
+    * firefox
+    * windows terminal 
+
+#### find-replace
+Find and replace words on Windows Explorer and files, supported case sensitive.
