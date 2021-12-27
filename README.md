@@ -1,5 +1,4 @@
 ## PowerShell Core Utilities
-
 A serie of commands for automate proccess and tasks of your Windows system using PowerShell Core.
 
 #### ps-git-alias
@@ -43,3 +42,7 @@ Collection of git command alias for cmdlet of OS.
 
 #### find-replace
 Find and replace words on Windows Explorer and files, supported case sensitive.
+ 
+#### pre-commit
+Git Hook script to run **build** and **unit tests** automatic on .NET Core applications before you commit. 
+Paste this file on **.git/hooks** folder inside git repository of your project.
